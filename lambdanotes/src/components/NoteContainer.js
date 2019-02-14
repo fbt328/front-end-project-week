@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import Note from './Note';
+import NoteSubmitter from './NoteSubmitter';
 
 class NoteContainer extends Component {
     constructor() {
@@ -22,14 +23,18 @@ class NoteContainer extends Component {
     render() {
         return (
             <div className='NoteContainer'>
+            <NoteSubmitter />
             {this.state.notes.map(note => {
                 return (
+                    <div>
+                    
                     <Note
                     title={note.title}
                     textBody={note.textBody}
                     tags={note.tags}
                     key={note.id}
                     />
+                    </div>
                 );
             })}
             

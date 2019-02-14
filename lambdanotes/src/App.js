@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NoteContainer from './components/NoteContainer'
+import SideBar from './components/SideBar'
 
 
 
@@ -12,7 +13,9 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <div>
+            <SideBar />
             <NoteContainer />
+            
           </div>
         </header>
       </div>

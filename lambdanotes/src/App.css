@@ -31,3 +31,15 @@
     transform: rotate(360deg);
   }
 }
+
+.sidebarContainer{
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  height: 100%;
+  background: lavenderblush;
+  color: grey;
+}
+button {
+  background: rgb(46, 231, 231);
+}
