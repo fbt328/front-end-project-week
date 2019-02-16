@@ -10,20 +10,21 @@ class NoteContainer extends Component {
             notes: [],
         };
     }
-    componentDidMount = () => {
-        axios.get('https://fe-notes.herokuapp.com/note/get/all')
-        .then (response => {
-          this.setState({notes: response.data});
-        })
-        .catch(err => {
-          console.log(err);
-        })
-      };
+    // componentDidMount = () => {
+    //     axios.get('https://fe-notes.herokuapp.com/note/get/all')
+    //     .then (response => {
+    //       this.setState({notes: response.data});
+    //     })
+    //     .catch(err => {
+    //       console.log(err);
+    //     })
+    //   };
+
 
     render() {
         return (
             <div className='NoteContainer'>
-            <NoteSubmitter />
+            {/* <NoteSubmitter addNote={this.addNote}/>  */}
             {this.state.notes.map(note => {
                 return (
                     <div>

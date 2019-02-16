@@ -33,13 +33,32 @@
 }
 
 .sidebarContainer{
-  display: flex;
-  flex-direction: column;
-  width: 25%;
-  height: 100%;
+ display: flex;
+ width: 25%;
+ height: 500px; 
+ 
   background: lavenderblush;
   color: grey;
 }
 button {
   background: rgb(46, 231, 231);
+}
+.NoteContainer{
+  background-color: #282c34;
+ border: 1px solid red;
+}
+.appContainer{
+  display: flex;
+  flex-direction: row;
+
+
+}
+
+.aNote{
+  /* display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start; */
+  height: 200px;
+  width: 200px;
+  border: 1px solid blue;
 }
