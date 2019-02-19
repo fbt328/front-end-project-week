@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router } from 'react-router-dom';
+// import { Router } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
 
 class SideBar extends Component {
@@ -10,14 +10,14 @@ class SideBar extends Component {
                 <h1>Lambda Notes</h1>
                <p> <button>
                         <NavLink to={'/'}>
-                            View Your Note(doesn't work yet)
+                            View Your Note(works now)
                         </NavLink>
                     </button></p>
                {/* view notes should route to "home", aka the main list */}
 
                <p> <button>
-                        <NavLink to={'/create'}>
-                             +Create New Note(doesn't work yet)
+                        <NavLink to={'/note/create'}>
+                             +Create New Note (works now))
                         </NavLink>
                     </button></p>
                {/* create new should route to note submit form */}

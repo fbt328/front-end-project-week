@@ -26,7 +26,8 @@ class NoteSubmitter extends Component {
   }
 
   handleInputChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({ 
+      [e.target.name]: e.target.value });
   };
 
   render() {
@@ -56,3 +57,8 @@ class NoteSubmitter extends Component {
 }
 
 export default NoteSubmitter;
+
+
+// current "known issue":
+// when I save a note, I must click back to view list, and then refresh the list in order to see my new note.
+// will attempt to fix later.

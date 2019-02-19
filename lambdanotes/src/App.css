@@ -33,10 +33,7 @@
 }
 
 .sidebarContainer{
- display: flex;
- width: 25%;
- height: 500px; 
- 
+  border: 1px solid magenta;
   background: lavenderblush;
   color: grey;
 }
@@ -48,16 +45,10 @@ button {
  border: 1px solid red;
 }
 .appContainer{
-  display: flex;
-  flex-direction: row;
-
-
+ border: 1px solid green;
 }
 
 .aNote{
-  /* display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start; */
   height: 200px;
   width: 200px;
   border: 1px solid blue;
