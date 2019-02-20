@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Note = props => {
     return (
         <div className='aNote'>
-            <Link to={`/editnote/${props.id}`}>
+            <Link to={`/note/edit/${props.id}`}>
                 <button
                 onClick={() => props.editNote(props.id)}>edit</button>
             </Link>
@@ -16,5 +16,5 @@ const Note = props => {
         </div>
     );
 };
-
+// 
 export default Note;

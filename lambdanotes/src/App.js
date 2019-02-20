@@ -75,10 +75,6 @@ class App extends Component {
             <SideBar />
             {/* side bar needs to be the nav bar? */}
           
-              <Route 
-                path="/editnote/:id"
-                render={props=> ( <NoteEditing {...props} notes={this.state.notes} cNote={this.state.cNote} editNote={this.editNote} />)} 
-              />
 
               <Route 
                 path={`/note/edit/:id`}
