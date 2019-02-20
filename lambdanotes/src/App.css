@@ -32,7 +32,17 @@
   }
 }
 
+.homePage {
+  border: 3px dashed orange;
+  display: flex;
+
+}
+
 .sidebarContainer{
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  height: 1000px;
   border: 1px solid magenta;
   background: lavenderblush;
   color: grey;
@@ -41,8 +51,11 @@ button {
   background: rgb(46, 231, 231);
 }
 .NoteContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   background-color: #282c34;
- border: 1px solid red;
+ border: 3px solid red;
 }
 .appContainer{
  border: 1px solid green;

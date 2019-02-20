@@ -23,6 +23,7 @@ class NoteContainer extends Component {
                     key={note._id}
                     id={note._id}
                     noteDelete={this.props.noteDelete}
+                    editNote={this.props.editNote}
                     />
                    
                 );

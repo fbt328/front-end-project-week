@@ -5,6 +5,7 @@ import SideBar from './components/SideBar'
 import Axios from 'axios';
 import './App.css';
 import NoteSubmitter from './components/NoteSubmitter';
+import NoteEditing from './components/NoteEditing';
 
 class App extends Component {
    constructor() {
@@ -13,7 +14,6 @@ class App extends Component {
       notes: [],
       title: '',
       textBody: '',
-      tag: ''
     };
   }
  
@@ -46,43 +46,62 @@ class App extends Component {
     // delete note
     noteDelete = (id) => {
       Axios.delete(`https://fe-notes.herokuapp.com/note/delete/${id}`)
-      .then (response =>{
+      .then (response => {
         this.setState({notes: this.state.notes.filter(note => note._id !== id)
         })
-        // if not the id then return array
+        // if not the id of the note being deleted, then return the rest of the items as a new array
         console.log(response)
       })
       .catch (err => console.log(err));
   }
 
-  handleInputChange = e => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
-
+  // update note
+  editNote = (id, updatingNote) => {
+    Axios
+      .put(`https://fe-notes.herokuapp.com/note/edit/${id}`, updatingNote)
+      .then ((response) => {
+          this.props.refresh();
+          this.props.history.push(`/note/${this.props.match.params.id}`)
+      })
+      .catch(err => console.log(err))
+  }
   
   render() {
     return (
       <div className="App">
         <header className='appContainer'>
           <div> 
-           <Route path='/note/create'
-              render={props =>
-                 <NoteSubmitter {...props} addNote={this.addNote}/>}
-            />
+            <div className='homePage'> 
+            <SideBar />
+            {/* side bar needs to be the nav bar? */}
+          
+              <Route 
+                path="/editnote/:id"
+                render={props=> ( <NoteEditing {...props} notes={this.state.notes} cNote={this.state.cNote} editNote={this.editNote} />)} 
+              />
+
+              <Route 
+                path={`/note/edit/:id`}
+                render={props=>
+                <NoteEditing {...props} editNote={this.editNote} /> }
+              />
+          
+              <Route path='/note/create'
+                render={props =>
+                <NoteSubmitter {...props} addNote={this.addNote}/>}
+              />
+        
             {/* note submitter link should live on the side bar, when you click it, it takes you to new note screen */}
            
            
-            <SideBar />
-            {/* side bar needs to be the nav bar? */}
            
-            
             <Route exact path='/'
               render={props => 
-                <NoteContainer {...props} notes={this.state.notes} noteDelete={this.noteDelete} />}
+                <NoteContainer {...props} notes={this.state.notes} noteDelete={this.noteDelete} editNote={this.editNote} />}
             />
+           </div>
 
-           
-           
+
             {/* single note view... route based on ID. also needs edit and delete. */}
             {/* <Route path='/note/:id'
               render={props =>

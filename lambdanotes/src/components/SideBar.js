@@ -10,7 +10,7 @@ class SideBar extends Component {
                 <h1>Lambda Notes</h1>
                <p> <button>
                         <NavLink to={'/'}>
-                            View Your Note(works now)
+                            View Your Notes(works now)
                         </NavLink>
                     </button></p>
                {/* view notes should route to "home", aka the main list */}
