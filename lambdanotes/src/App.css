@@ -50,11 +50,11 @@ a {
   width: 500px;
   height: 1000px;
   border: 1px solid magenta;
-  background: lavenderblush;
-  color: grey;
+  background: #D3D2D3;
+  color: #434343;
 }
 button {
-  background: rgb(46, 231, 231);
+  background:#24B8BD;
 }
 .NoteContainer{
   display: flex;

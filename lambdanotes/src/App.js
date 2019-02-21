@@ -76,24 +76,26 @@ class App extends Component {
         <header className='appContainer'>
           <div> 
             <div className='homePage'> 
+
             <SideBar />
             {/* side bar needs to be the nav bar? */}
 
           
               <Route 
-              exact path="/note/:id"
+              exact path="/note/get/:id"
               render={props=>
               <SingleNote {...props} /> }
           />
           {/* takes you to view a single note */}
 
               <Route 
-                path={`/note/edit/:id`}
+                exact path={`/note/edit/:id`}
                 render={props=>
                 <NoteEditing {...props} editNote={this.editNote} /> }
               />
           
-              <Route path='/note/create'
+              <Route 
+                exact path='/note/create'
                 render={props =>
                 <NoteSubmitter {...props} addNote={this.addNote}/>}
               />
@@ -105,7 +107,7 @@ class App extends Component {
             <Route exact path='/'
               render={props => 
                 <NoteContainer {...props} notes={this.state.notes}
-                 noteDelete={this.noteDelete} editNote={this.editNote} 
+                //  noteDelete={this.noteDelete} editNote={this.editNote} 
                  />}
             />
            </div>
