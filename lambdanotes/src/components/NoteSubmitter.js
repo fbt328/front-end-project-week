@@ -55,7 +55,6 @@ class NoteSubmitter extends Component {
     );
   }
 }
-// 
 export default NoteSubmitter;
 
 

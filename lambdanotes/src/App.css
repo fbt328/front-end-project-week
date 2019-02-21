@@ -1,3 +1,9 @@
+a {
+  text-decoration: none;
+  border: 1px solid green;
+  color: rgb(82, 18, 184);
+}
+
 .App {
   text-align: center;
 }
@@ -54,9 +60,11 @@ button {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  background-color: #282c34;
+  background-color: #becae2;
  border: 3px solid red;
+
 }
+
 .appContainer{
  border: 1px solid green;
 }
@@ -65,4 +73,7 @@ button {
   height: 200px;
   width: 200px;
   border: 1px solid blue;
+  color: red;
 }
+
+

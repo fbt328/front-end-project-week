@@ -6,6 +6,7 @@ import Axios from 'axios';
 import './App.css';
 import NoteSubmitter from './components/NoteSubmitter';
 import NoteEditing from './components/NoteEditing';
+import SingleNote from './components/SingleNote';
 
 class App extends Component {
    constructor() {
@@ -29,6 +30,9 @@ class App extends Component {
         console.log(err);
     })
   }
+  handleInputChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
 
 
     // add note
@@ -74,7 +78,14 @@ class App extends Component {
             <div className='homePage'> 
             <SideBar />
             {/* side bar needs to be the nav bar? */}
+
           
+              <Route 
+              exact path="/note/:id"
+              render={props=>
+              <SingleNote {...props} /> }
+          />
+          {/* takes you to view a single note */}
 
               <Route 
                 path={`/note/edit/:id`}
@@ -93,7 +104,9 @@ class App extends Component {
            
             <Route exact path='/'
               render={props => 
-                <NoteContainer {...props} notes={this.state.notes} noteDelete={this.noteDelete} editNote={this.editNote} />}
+                <NoteContainer {...props} notes={this.state.notes}
+                 noteDelete={this.noteDelete} editNote={this.editNote} 
+                 />}
             />
            </div>
 

@@ -70,6 +70,7 @@ class NoteEditing extends Component {
             .then ((response) => {
                 this.props.refresh();
                 this.props.history.push(`/note/${this.props.match.params.id}`)
+                this.props.history.push("/");
             })
             .catch (err => console.log(err))
     }

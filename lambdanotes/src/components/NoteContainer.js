@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import Note from './Note';
 
 
@@ -13,26 +14,25 @@ class NoteContainer extends Component {
   
     render() {
         return (
-            <div className='NoteContainer'>
+            <span className='NoteContainer'>
             {this.props.notes.map(note => {
                 return (
+                    <Link to={`/note/${note._id}`}>
                     <Note
                     title={note.title}
                     textBody={note.textBody}
-                    tags={note.tags}
                     key={note._id}
                     id={note._id}
-                    noteDelete={this.props.noteDelete}
-                    editNote={this.props.editNote}
+                    // noteDelete={this.props.noteDelete}
+                    // editNote={this.props.editNote}
                     />
-                   
+                    </Link>
                 );
             })}
             
-            </div>
+            </span>
         )
     }
 
 }
-// 
 export default NoteContainer;
