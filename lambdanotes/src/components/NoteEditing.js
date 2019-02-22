@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
+import { Link } from 'react-router-dom';
 
 class NoteEditing extends Component {
   constructor(props) {
@@ -60,6 +61,9 @@ class NoteEditing extends Component {
     }
 
 
+
+
+
     editNote = e => {
         e.preventDefault();
         Axios
@@ -68,9 +72,10 @@ class NoteEditing extends Component {
                 textBody: this.state.updatedTextBody,
             })
             .then ((response) => {
-                this.props.refresh();
-                this.props.history.push(`/note/${this.props.match.params.id}`)
-                this.props.history.push("/");
+                this.setState(
+                    {notes: response.data},
+                )
+                this.props.history.push(`/note/get/${this.props.match.params.id}`)
             })
             .catch (err => console.log(err))
     }
@@ -79,7 +84,14 @@ class NoteEditing extends Component {
         return (
         <div className="NoteFormContainer">
         <h1>Edit Your Note:</h1>
+
+       
+               
+ 
         <form onSubmit={this.editNote}>
+        
+        
+        
                 <p><input
                 onChange={this.TitleInputHandler}
                 placeholder="Note Title"
@@ -93,12 +105,15 @@ class NoteEditing extends Component {
                 defaultValue={this.state.noteForEditing.textBody}
                 name="textBody"
             /></p>
-          
+          {/* <Link to='/${id}'> */}
             <button type="saveNoteButton">Save Your Changes</button>
+        {/* </Link> */}
         </form>
       </div>
     );
   }
 }
-// 
+
 export default NoteEditing;
+
+              

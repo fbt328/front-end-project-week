@@ -49,7 +49,6 @@ class App extends Component {
 
     // delete note
     noteDelete = (id) => {
-      console.log(id)
       const notes = this.state.notes.slice()
       Axios.delete(`https://fe-notes.herokuapp.com/note/delete/${id}`)
       .then (response => {
@@ -64,15 +63,15 @@ class App extends Component {
   }
 
   // update note
-  editNote = (id, updatingNote) => {
-    Axios
-      .put(`https://fe-notes.herokuapp.com/note/edit/${id}`, updatingNote)
-      .then ((response) => {
-          this.props.refresh();
-          this.props.history.push(`/note/${this.props.id}`)
-      })
-      .catch(err => console.log(err))
-  }
+  // editNote = (id, updatingNote) => {
+  //   Axios
+  //     .put(`https://fe-notes.herokuapp.com/note/edit/${id}`, updatingNote)
+  //     .then ((response) => {
+  //         this.props.refresh();
+  //         this.props.history.push(`/note/${this.props.id}`)
+  //     })
+  //     .catch(err => console.log(err))
+  // }
   
   render() {
     return (

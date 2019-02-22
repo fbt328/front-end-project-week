@@ -75,5 +75,11 @@ button {
   border: 1px solid blue;
   color: red;
 }
-
+/* p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 200px;
+} 
+this is to limit the overflow for the note boxes*/
 

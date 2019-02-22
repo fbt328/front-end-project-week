@@ -5,6 +5,7 @@ class NoteSubmitter extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      notes: {},
       title: '',
       textBody: '',
       tag: ''
@@ -12,15 +13,15 @@ class NoteSubmitter extends Component {
   }
  
   addNote = e => {
+    // const newNote = this.state.notes
     e.preventDefault();
     Axios.post('https://fe-notes.herokuapp.com/note/create', {
         title: this.state.title, 
         textBody: this.state.textBody })
     .then (() => {
-      this.setState({
-        title: '',
-        textBody: '',
-        tag: ''})
+      // this.setState({
+      //   newNote: something here })
+        this.props.history.push(`/`)
     })
     .catch (err => console.log(err))
   }
