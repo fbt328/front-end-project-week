@@ -1,5 +1,5 @@
 import React from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const backdropStyle = {
   position: 'fixed',
@@ -39,7 +39,12 @@ class Modal extends React.Component {
             {this.props.children}
               <div>
                 <button onClick={(e) => {this.onClose(e)}}> do not delete </button>
-                <button classNameonClick={() => {this.noteDelete(this.id)}}>yes, permanently delete</button>
+                
+                <Link to='/'>
+                <button onClick={() => this.props.noteDelete(this.props.id)} > permanently delete </button>
+                </Link>
+                
+                {/* this.props.history.push() to main view on note delete .then */}
                 {/* delete button will lead to delete function, need to fix still */}
               </div>
           </div>

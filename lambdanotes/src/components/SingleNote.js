@@ -7,7 +7,7 @@ class SingleNote extends Component {
     note: [],
       title: '',
       textBody: '',
-    show: false
+      show: false
   }
 
 
@@ -66,7 +66,7 @@ class SingleNote extends Component {
           onClick={this.showModal}
           value='delete note'
         />
-       <Modal onClose={this.showModal} show={this.state.show}>
+       <Modal onClose={this.showModal} show={this.state.show} id={this.props.match.params.id} noteDelete={this.props.noteDelete}>
        Are you sure you want to delete your note?
          <p>(this cannot be undone)</p>
        </Modal>

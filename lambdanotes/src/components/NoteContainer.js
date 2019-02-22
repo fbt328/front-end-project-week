@@ -17,11 +17,11 @@ class NoteContainer extends Component {
             <span className='NoteContainer'>
             {this.props.notes.map(note => {
                 return (
-                    <Link to={`/note/get/${note._id}`}>
+                    <Link key={note._id} to={`/note/get/${note._id}`}>
                     <Note
                     title={note.title}
                     textBody={note.textBody}
-                    key={note._id}
+                    
                     id={note._id}
                     // noteDelete={this.props.noteDelete}
                     // editNote={this.props.editNote}

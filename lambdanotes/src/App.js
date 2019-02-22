@@ -49,10 +49,14 @@ class App extends Component {
 
     // delete note
     noteDelete = (id) => {
+      console.log(id)
+      const notes = this.state.notes.slice()
       Axios.delete(`https://fe-notes.herokuapp.com/note/delete/${id}`)
       .then (response => {
-        this.setState({notes: this.state.notes.filter(note => note._id !== id)
+        this.setState({notes: notes.filter(note => note._id !== id)
         })
+        this.props.history.push(`/`)
+        {/* this.props.history.push() to main view on note delete .then */}
         // if not the id of the note being deleted, then return the rest of the items as a new array
         console.log(response)
       })
@@ -65,7 +69,7 @@ class App extends Component {
       .put(`https://fe-notes.herokuapp.com/note/edit/${id}`, updatingNote)
       .then ((response) => {
           this.props.refresh();
-          this.props.history.push(`/note/${this.props.match.params.id}`)
+          this.props.history.push(`/note/${this.props.id}`)
       })
       .catch(err => console.log(err))
   }
@@ -84,7 +88,7 @@ class App extends Component {
               <Route 
               exact path="/note/get/:id"
               render={props=>
-              <SingleNote {...props} /> }
+              <SingleNote {...props} noteDelete={this.noteDelete}/> }
           />
           {/* takes you to view a single note */}
 
