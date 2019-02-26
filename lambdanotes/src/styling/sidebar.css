@@ -49,93 +49,54 @@ table {
 
 /* ALL ABOVE RESET */
 
-/* .homePage{
-border: 2px dashed orange;
-display: flex;
-
-}
-
-span.mappedNote {
-  border: 1px solid green;
-} */
 
 
-
-/* a {
-  text-decoration: none;
-  border: 1px solid green;
-  color: rgb(82, 18, 184);
-} */
-
-.App {
-  text-align: center;
-}
-
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-} */
 
 .App-link {
   color: #61dafb;
 }
 
-
-.homePage {
-  border: 3px dashed orange;
+.sidebarContainer{
   display: flex;
-
+  flex-direction: column;
+  border: 1px solid magenta;
+  background: #D3D2D3;
+  color: #434343;
+  max-width: 300px;
+  min-width: 220px;
+  min-height: 600px;
+  height: auto;
+  text-align: left;
+  padding-left: 10px;
 }
 
-/*  */
-
-.NoteContainer{
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  background-color: #becae2;
- border: 3px solid red;
-
+a:link {
+  text-decoration: none;
+  color: white;
+   
 }
-
-.appContainer{
- border: 1px solid green;
+a {
+  color: white;
+  
+  font-size: 15px;
+  font-weight: 550;
 }
-
-.linkNote{
-  height: 200px;
-  width: 200px;
-  border: 1px solid blue;
-  color: black;
+.sidebarH1{
+  font-family: 'Roboto', sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  margin-top: 9px;
+  margin-bottom: 1px;
+}
+.sidebarButton{
+  width: 190px;
+  height: 45px;
+  background:#24B8BD;
+  color: white;
   margin: 10px;
-  padding: 10px;
-  white-space: wrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
- a.button{
-color: black;
-border: 1 solid red;
-}
-/* p {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 200px;
-} 
-this is to limit the overflow for the note boxes*/
 
-
-.textBodyForm{
-  height: 400px;
-  width: 400 px;
-  align: center;
-  border: 1px solid orange;
+.titleBar{
+  padding-top: 12px;
+  margin-left: 10px;
 }

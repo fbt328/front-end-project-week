@@ -21,6 +21,17 @@ const modalStyle = {
   position: 'relative'
 }
 
+
+
+const modalButtons = {
+  width: 190,
+  height: 45,
+}
+
+const redButton = {
+  backgroundColor: '#CA001A',
+}
+
 class Modal extends React.Component {
 
   onClose = (e) => {
@@ -38,11 +49,13 @@ class Modal extends React.Component {
          <div style={modalStyle}>
             {this.props.children}
               <div>
-                <button onClick={(e) => {this.onClose(e)}}> do not delete </button>
-                
+
                 <Link to='/'>
-                <button onClick={() => this.props.noteDelete(this.props.id)} > permanently delete </button>
+                <button style={redButton} style={modalButtons} onClick={() => this.props.noteDelete(this.props.id)} > permanently delete </button>
                 </Link>
+                <button style={modalButtons} onClick={(e) => {this.onClose(e)}}> do not delete </button>
+                
+                
                 
                 {/* this.props.history.push() to main view on note delete .then */}
                 {/* delete button will lead to delete function, need to fix still */}

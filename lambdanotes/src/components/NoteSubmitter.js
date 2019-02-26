@@ -43,7 +43,7 @@ class NoteSubmitter extends Component {
             name="title"
           /></p>
 
-         <p><input
+         <p className='textBodyForm'><input
             onChange={this.handleInputChange}
             placeholder="Note Content"
             value={this.state.textBody}

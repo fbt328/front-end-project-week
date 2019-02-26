@@ -17,7 +17,7 @@ class NoteContainer extends Component {
             <span className='NoteContainer'>
             {this.props.notes.map(note => {
                 return (
-                    <Link key={note._id} to={`/note/get/${note._id}`}>
+                    <Link className='linkNote' key={note._id} to={`/note/get/${note._id}`}>
                     <Note
                     title={note.title}
                     textBody={note.textBody}
